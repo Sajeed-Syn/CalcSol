@@ -1,0 +1,35 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+ - main
+
+pool:
+ vmImage: 'windows-latest'
+variables:
+  builConfiguration: 'Release'
+  outputFolder: 'C:\Deploy\CalcApp'
+steps:
+  - checkout: self
+  - task: UseDotNet@2
+    inputs:
+      packageType: 'sdk'
+      version: '8.x '
+  - script: dotnet restore
+    displayName: Restore
+  - script: dotnet build --configuration $ (buildConfiguration) --no-restore --loger "trx"
+    displayName: Run Tests
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/*.trx'
+  - script: dotnet publish -c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)
+    displayName: Publish
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: '$(Build.ArtifactStagingDirectory)'
+      Contents: '**'
+      TargetFolder: '$(outputFolder)'
+      OverWrite: true
+      
