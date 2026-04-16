@@ -10,7 +10,7 @@ pool:
  vmImage: 'windows-latest'
 variables:
   builConfiguration: 'Release'
-  outputFolder: 'C:\Deploy\CalcApp'
+  outputFolder: 'D:\Deploy\CalcApp'
 steps:
   - checkout: self
   - task: UseDotNet@2
