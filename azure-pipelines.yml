@@ -17,8 +17,22 @@ steps:
     inputs:
       packageType: 'sdk'
       version: '8.x '
- 
-  - script: dotnet build --configuration $(buildConfiguration) --no-restore 
+  - script: dotnet restore CalcApp.csproj
+    displayName: Restore
+
+  - script: dotnet build --configuration $(buildConfiguration) --no-restore --logger "trx"
     displayName: Run Tests
-  
+
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/*.trx'
+  - script: dotnet publish -c $(buildConfiguration) -o $(Build.ArtifactStagingDirectory)
+    displayName: Publish
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: '$(Build.ArtifactStagingDirectory)'
+      Contents: '**'
+      TargetFolder: '$(outputFolder)'
+      OverWrite: true
+
       
