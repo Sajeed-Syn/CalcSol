@@ -1,0 +1,11 @@
+D:\Learn\CalcSol\CalcApp\bin\Debug\net8.0\CalcApp.deps.json
+D:\Learn\CalcSol\CalcApp\bin\Debug\net8.0\CalcApp.dll
+D:\Learn\CalcSol\CalcApp\bin\Debug\net8.0\CalcApp.pdb
+D:\Learn\CalcSol\CalcApp\obj\Debug\net8.0\CalcApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Learn\CalcSol\CalcApp\obj\Debug\net8.0\CalcApp.AssemblyInfoInputs.cache
+D:\Learn\CalcSol\CalcApp\obj\Debug\net8.0\CalcApp.AssemblyInfo.cs
+D:\Learn\CalcSol\CalcApp\obj\Debug\net8.0\CalcApp.csproj.CoreCompileInputs.cache
+D:\Learn\CalcSol\CalcApp\obj\Debug\net8.0\CalcApp.dll
+D:\Learn\CalcSol\CalcApp\obj\Debug\net8.0\refint\CalcApp.dll
+D:\Learn\CalcSol\CalcApp\obj\Debug\net8.0\CalcApp.pdb
+D:\Learn\CalcSol\CalcApp\obj\Debug\net8.0\ref\CalcApp.dll
